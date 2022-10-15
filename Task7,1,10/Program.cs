@@ -11,6 +11,12 @@
         {
             protected string Name;
 
+            public virtual int Counter
+            {
+                get;
+                set;
+            }
+
             public BaseClass(string name)
             {
                 Name = name;
@@ -26,7 +32,15 @@
         {
             public string Description;
 
-            public int Counter;
+            public override int Counter 
+            {
+                get => base.Counter;
+                set
+                {
+                    if (value > 0)
+                        base.Counter = value;
+                }
+            }
 
             DerivedClass(string name, string description) : base(name)
             {
