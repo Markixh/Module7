@@ -15,6 +15,11 @@
             {
                 Name = name;
             }
+
+            public virtual void Display()
+            {
+                Console.WriteLine("Метод класса BaseClass");
+            }
         }
 
         class DerivedClass : BaseClass
@@ -32,6 +37,11 @@
             {
                 Description = description;
                 Counter = counter;
+            }
+
+            public override void Display()
+            {
+                Console.WriteLine("Метод класса DerivedClass");
             }
         }
     }
