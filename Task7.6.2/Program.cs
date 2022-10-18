@@ -8,38 +8,24 @@
             Console.WriteLine("Hello, World!");
         }
 
-        class Car<T1>
+        class Car<TEngine> where TEngine : Engine
         {
-            public T1 Engine;
-            public virtual void ChangePart<T2>(T2 newPart)
-            {
-
-            }
+            public TEngine Engine;
+            public virtual void ChangePart<TPart>(TPart newPart) where TPart : Part { }
         }
 
-        class ElectricEngine
-        {
+        abstract class Engine { }
 
-        }
+        class ElectricEngine : Engine { }
 
-        class GasEngine
-        {
+        class GasEngine : Engine { }
 
-        }
+        class Part { }
 
-        class Battery
-        {
+        class Battery : Part { }
 
-        }
+        class Differential : Part { }
 
-        class Differential
-        {
-
-        }
-
-        class Wheel
-        {
-
-        }
+        class Wheel : Part { }
     }
 }
