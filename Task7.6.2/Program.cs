@@ -20,7 +20,7 @@
 
         class GasEngine : Engine { }
 
-        class Part { }
+        abstract class Part { }
 
         class Battery : Part { }
 
